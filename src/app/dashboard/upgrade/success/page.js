@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function SuccessPage() {
+import { Suspense } from "react";
+
+function SuccessContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const sessionId = searchParams.get("session_id");
@@ -122,5 +124,13 @@ export default function SuccessPage() {
         </Link>
       </div>
     </div>
+  );
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<div className="fixed inset-0 flex items-center justify-center text-white">Loading...</div>}>
+      <SuccessContent />
+    </Suspense>
   );
 }
