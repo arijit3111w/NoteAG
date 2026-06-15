@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@theme {
+  --color-orange-400: #fb923c;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-orange-700: #c2410c;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+
+  --animate-lamp: lamp 2s ease-in-out forwards;
+  --animate-grid-fade: grid-fade 3s ease-in-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+  --animate-spotlight: spotlight 2s ease 0.75s forwards;
+  --animate-fade-up: fade-up 0.8s ease-out forwards;
+  --animate-shimmer: shimmer 2s linear infinite;
+}
+
+@keyframes lamp {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes grid-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    filter: blur(60px);
+  }
+  50% {
+    opacity: 0.8;
+    filter: blur(80px);
+  }
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Clerk component overrides for dark/orange theme */
+.cl-card {
+  background: rgba(15, 15, 15, 0.8) !important;
+  border: 1px solid rgba(249, 115, 22, 0.2) !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 0 40px rgba(249, 115, 22, 0.08), 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
+  border-radius: 16px !important;
+}
+
+.cl-headerTitle,
+.cl-headerSubtitle,
+.cl-socialButtonsBlockButtonText,
+.cl-dividerText,
+.cl-formFieldLabel,
+.cl-footerActionText {
+  color: #e5e5e5 !important;
+}
+
+.cl-formFieldInput {
+  background: rgba(30, 30, 30, 0.9) !important;
+  border-color: rgba(249, 115, 22, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.cl-formFieldInput:focus {
+  border-color: rgba(249, 115, 22, 0.7) !important;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15) !important;
+}
+
+.cl-formButtonPrimary {
+  background: linear-gradient(135deg, #f97316, #ea580c) !important;
+  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3) !important;
+}
+
+.cl-formButtonPrimary:hover {
+  background: linear-gradient(135deg, #fb923c, #f97316) !important;
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4) !important;
+}
+
+.cl-socialButtonsBlockButton {
+  background: rgba(30, 30, 30, 0.8) !important;
+  border-color: rgba(249, 115, 22, 0.2) !important;
+}
+
+.cl-socialButtonsBlockButton:hover {
+  background: rgba(50, 50, 50, 0.8) !important;
+  border-color: rgba(249, 115, 22, 0.4) !important;
+}
+
+.cl-dividerLine {
+  background: rgba(249, 115, 22, 0.2) !important;
+}
+
+.cl-footerActionLink {
+  color: #f97316 !important;
+}
+
+.cl-footerActionLink:hover {
+  color: #fb923c !important;
+}
+
+.cl-internal-b3fm6y {
+  background: transparent !important;
+}
