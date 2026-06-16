@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
+import { WebPDFLoader } from "@langchain/community/document_loaders/web/pdf";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 
 export async function GET(req) {
@@ -12,15 +12,20 @@ export async function GET(req) {
 
     try {
         // 1. Load the PDF File
+        console.log("1. Fetching PDF from URL:", pdfUrl);
         const response = await fetch(pdfUrl);
         const data = await response.blob();
-        const loader = new PDFLoader(data);
+        console.log("2. PDF fetched, blob size:", data.size);
+        
+        const loader = new WebPDFLoader(data);
         const docs = await loader.load();
+        console.log("3. PDF loaded, number of docs:", docs.length);
 
         let pdfTextContent = '';
         docs.forEach(doc => {
             pdfTextContent = pdfTextContent + doc.pageContent;
         });
+        console.log("4. Extracted text content length:", pdfTextContent.length);
 
         // 2. Split the Text into Small Chunks
         const splitter = new RecursiveCharacterTextSplitter({
@@ -33,6 +38,7 @@ export async function GET(req) {
         output.forEach(doc => {
             splitterList.push(doc.pageContent);
         });
+        console.log("5. Text split into chunks, number of chunks:", splitterList.length);
 
         return NextResponse.json({ result: splitterList });
     } catch (error) {
