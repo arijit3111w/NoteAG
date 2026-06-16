@@ -236,7 +236,7 @@ export default function WorkspaceHeader({ fileName }) {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: "rgba(249,115,22,0.5)" }}>
               <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/>
             </svg>
-            <span className="text-sm text-neutral-400 font-mono truncate max-w-[200px] sm:max-w-[300px]">
+            <span className="text-sm text-neutral-400 font-mono truncate max-w-[120px] sm:max-w-[200px] md:max-w-[300px]">
               {fileName}
             </span>
           </div>
@@ -244,7 +244,7 @@ export default function WorkspaceHeader({ fileName }) {
       </div>
 
       {/* ─── Center: Subtle animated dots ─── */}
-      <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10">
+      <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-1.5 z-10">
         <span className="block w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
         <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider">
           workspace

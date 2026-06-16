@@ -68,7 +68,26 @@ export default function DashboardPage() {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      if (!mobile) setSidebarOpen(true);
+      else {
+        setSidebarOpen(false);
+        if (sidebarRef.current) {
+          gsap.set(sidebarRef.current, { clearProps: "transform" });
+        }
+      }
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   /* ─── Refs for GSAP ─── */
   const shellRef = useRef(null);
@@ -86,11 +105,14 @@ export default function DashboardPage() {
         { opacity: 0, scale: 0.95, y: 30 },
         { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.1 }
       );
-      gsap.fromTo(
-        sidebarRef.current,
-        { x: -60, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.4 }
-      );
+      // Only animate sidebar on desktop — on mobile it uses CSS transform
+      if (window.innerWidth >= 768 && sidebarRef.current) {
+        gsap.fromTo(
+          sidebarRef.current,
+          { x: -60, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.4 }
+        );
+      }
       gsap.fromTo(
         headerRef.current,
         { y: -20, opacity: 0 },
@@ -271,32 +293,62 @@ export default function DashboardPage() {
 
           {/* ─── Body: Sidebar + Main ─── */}
           <div className="flex flex-1 overflow-hidden">
+            {/* ═══ Mobile Sidebar Backdrop ═══ */}
+            {isMobile && sidebarOpen && (
+              <div
+                className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+                onClick={() => setSidebarOpen(false)}
+              />
+            )}
+
             {/* ═══ Sidebar ═══ */}
             <aside
               ref={sidebarRef}
-              className={`${sidebarOpen ? "w-64" : "w-0"} shrink-0 flex flex-col transition-all duration-300 overflow-hidden`}
+              className={`${
+                isMobile
+                  ? `fixed top-0 left-0 z-50 h-full w-64 transition-transform duration-300 ${
+                      sidebarOpen ? "translate-x-0" : "-translate-x-full"
+                    }`
+                  : `${sidebarOpen ? "w-64" : "w-0"} shrink-0 transition-all duration-300 overflow-hidden`
+              } flex flex-col`}
               style={{
-                opacity: 0,
+                opacity: isMobile ? 1 : 0,
                 background: "linear-gradient(180deg, #141414, #0e0e0e)",
                 borderRight: "1px solid rgba(255,255,255,0.06)",
               }}
             >
               <div className="flex flex-col h-full p-4 min-w-[256px]">
-                {/* Logo */}
-                <Link href="/" className="flex items-center gap-1.5 mb-6 px-1 group">
-                  <span
-                    className="text-xl font-bold transition-all group-hover:scale-105"
-                    style={{
-                      background: "linear-gradient(135deg, #fb923c, #ea580c)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >
-                    NOTE
-                  </span>
-                  <span className="text-xl font-bold text-white transition-all group-hover:scale-105">AG</span>
-                </Link>
+                {/* Header (Logo + Close Button) */}
+                <div className="flex items-center justify-between mb-6">
+                  {/* Logo */}
+                  <Link href="/" className="flex items-center gap-1.5 px-1 group">
+                    <span
+                      className="text-xl font-bold transition-all group-hover:scale-105"
+                      style={{
+                        background: "linear-gradient(135deg, #fb923c, #ea580c)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      NOTE
+                    </span>
+                    <span className="text-xl font-bold text-white transition-all group-hover:scale-105">AG</span>
+                  </Link>
+
+                  {/* Mobile close button */}
+                  {isMobile && (
+                    <button
+                      onClick={() => setSidebarOpen(false)}
+                      className="p-1.5 rounded-lg text-neutral-400 hover:text-white transition-colors md:hidden"
+                      style={{ background: "rgba(255,255,255,0.05)" }}
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                      </svg>
+                    </button>
+                  )}
+                </div>
 
                 {/* Upload PDF button — opens dialog */}
                 <button
@@ -391,13 +443,13 @@ export default function DashboardPage() {
             {/* ═══ Main Content ═══ */}
             <main
               ref={mainRef}
-              className="flex-1 overflow-y-auto p-6 sm:p-8"
+              className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8"
               style={{ background: "linear-gradient(180deg, #111, #0a0a0a)" }}
             >
               {/* Toggle sidebar on mobile */}
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="sm:hidden mb-4 p-2 rounded-lg text-neutral-400 hover:text-white transition-colors"
+                className="md:hidden mb-4 p-2 rounded-lg text-neutral-400 hover:text-white transition-colors"
                 style={{ background: "rgba(255,255,255,0.05)" }}
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

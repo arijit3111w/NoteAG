@@ -213,33 +213,30 @@ export default function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden flex flex-col items-center justify-center w-10 h-10 gap-1.5 cursor-pointer"
+              className="md:hidden relative flex flex-col items-center justify-center w-10 h-10 cursor-pointer"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
               <span
-                className="block w-5 h-[2px] rounded-full transition-all duration-300"
+                className="block w-6 h-[2px] rounded-full absolute transition-all duration-300"
                 style={{
                   backgroundColor: "#f97316",
-                  transform: mobileOpen
-                    ? "rotate(45deg) translateY(5px)"
-                    : "none",
+                  transform: mobileOpen ? "rotate(45deg)" : "translateY(-8px)",
                 }}
               />
               <span
-                className="block w-5 h-[2px] rounded-full transition-all duration-300"
+                className="block w-6 h-[2px] rounded-full absolute transition-all duration-300"
                 style={{
                   backgroundColor: "#f97316",
                   opacity: mobileOpen ? 0 : 1,
+                  transform: mobileOpen ? "scaleX(0)" : "scaleX(1)",
                 }}
               />
               <span
-                className="block w-5 h-[2px] rounded-full transition-all duration-300"
+                className="block w-6 h-[2px] rounded-full absolute transition-all duration-300"
                 style={{
                   backgroundColor: "#f97316",
-                  transform: mobileOpen
-                    ? "rotate(-45deg) translateY(-5px)"
-                    : "none",
+                  transform: mobileOpen ? "rotate(-45deg)" : "translateY(8px)",
                 }}
               />
             </button>
@@ -299,6 +296,17 @@ export default function Navbar() {
               </SignUpButton>
             </Show>
             <Show when="signed-in">
+              <Link
+                href="/dashboard"
+                onClick={() => setMobileOpen(false)}
+                className="px-8 py-3 text-base font-medium rounded-full transition-all duration-300"
+                style={{
+                  border: "1px solid rgba(249, 115, 22, 0.4)",
+                  color: "#f97316",
+                }}
+              >
+                Dashboard
+              </Link>
               <UserButton />
             </Show>
           </div>
