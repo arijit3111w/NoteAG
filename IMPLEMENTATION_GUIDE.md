@@ -1,18 +1,18 @@
-# NoteAG Implementation Guide
+# smart-research-ai Implementation Guide
 ## Building a PDF + AI Q&A SaaS with Convex, Langchain & Gemini
 
 ---
 
-## 📖 How NoteAG Works: A Visual Explanation
+## 📖 How smart-research-ai Works: A Visual Explanation
 
 Before jumping into code, let's understand the complete system through diagrams and real examples.
 
 ### What You're Looking At
 
-![NoteAG Workspace](./images/noteag_workspace.png)
-*The NoteAG interface: PDF viewer on the left, AI-powered text editor on the right*
+![smart-research-ai Workspace](./images/smart_research_ai_workspace_full.png)
+*The smart-research-ai interface: PDF viewer on the left, AI-powered text editor on the right*
 
-This is NoteAG in action. A user uploads a PDF document, asks questions about it, and gets intelligent answers with the exact source highlighted in the PDF. But how does this magic happen? Let's break it down.
+This is smart-research-ai in action. A user uploads a PDF document, asks questions about it, and gets intelligent answers with the exact source highlighted in the PDF. But how does this magic happen? Let's break it down.
 
 ---
 
@@ -21,7 +21,7 @@ This is NoteAG in action. A user uploads a PDF document, asks questions about it
 ![Complete System Overview](./images/two_pipelines_diagram.png)
 *Two main flows: Upload & Embed (left) and Query & Answer (right)*
 
-NoteAG works using **two separate pipelines**:
+smart-research-ai works using **two separate pipelines**:
 
 #### **Left Side: UPLOAD & EMBED FLOW** (Happens once when PDF is uploaded)
 This is the "setup" phase that prepares your PDF for intelligent searching:
@@ -161,7 +161,7 @@ Document: "...internship at Infosys Springboard..."
 Result: ❌ No match (different words: "intern" vs "internship")
 ```
 
-**NoteAG's Semantic Search:**
+**smart-research-ai's Semantic Search:**
 ```
 Search: "Where did Arijit intern?"
   → Vector: [0.21, -0.13, 0.89, ...]
@@ -951,4 +951,4 @@ export const ingestBatch = internalAction({
 
 ---
 
-**Built with ❤️ for NoteAG**
+**Built with ❤️ for smart-research-ai**

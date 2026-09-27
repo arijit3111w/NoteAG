@@ -118,7 +118,7 @@ subscriptions: {
   stripeSubscriptionId: "sub_xxx",
   stripeCustomerId: "cus_xxx",
   status: "active",
-  planName: "NoteAG Pro",
+  planName: "smart-research-ai Pro",
   currentPeriodEnd: 1234567890,
   cancelAtPeriodEnd: false
 }

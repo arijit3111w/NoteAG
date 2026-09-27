@@ -117,7 +117,7 @@ export const makeUserPremium = mutation({
         stripeSubscriptionId: "manual_" + Date.now(),
         stripeCustomerId: "manual_" + Date.now(),
         status: "active",
-        planName: "NoteAG Pro (Manual)",
+        planName: "smart-research-ai Pro (Manual)",
         currentPeriodEnd: thirtyDaysFromNow,
         cancelAtPeriodEnd: false,
       });

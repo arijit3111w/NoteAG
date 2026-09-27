@@ -6,27 +6,27 @@ This directory contains visual assets for the README.md and IMPLEMENTATION_GUIDE
 
 Please save the following screenshots with these exact filenames:
 
-### 1. `noteag_workspace_full.png`
-**Description:** Full-width screenshot of the NoteAG workspace showing:
+### 1. `smart_research_ai_workspace_full.png`
+**Description:** Full-width screenshot of the smart-research-ai workspace showing:
 - Complete application interface in dark mode
 - PDF viewer on the left side displaying a document with highlighted text
 - Text editor on the right side with AI-generated answers and rich text formatting
-- Header with NoteAG logo, navigation (HOME, FEATURES, PRICING), and user profile
+- Header with smart-research-ai logo, navigation (HOME, FEATURES, PRICING), and user profile
 - The split-screen interface demonstrating the complete Q&A workflow
 
-**Current Screenshot:** Browser showing complete NoteAG interface with "Virtualization.pdf" and "Types of Hypervisors" content with AI-generated answer
+**Current Screenshot:** Browser showing complete smart-research-ai interface with "Virtualization.pdf" and "Types of Hypervisors" content with AI-generated answer
 
 **Usage:** Main hero image for README.md
 
 ---
 
-### 2. `noteag_workspace.png`
-**Description:** Screenshot of the NoteAG workspace (can be same as above or cropped version)
+### 2. `smart_research_ai_workspace.png`
+**Description:** Screenshot of the smart-research-ai workspace (can be same as above or cropped version)
 - PDF viewer on the left side displaying a document
 - Text editor on the right side with AI-generated answers
 - The split-screen interface demonstrating the Q&A workflow
 
-**Current Screenshot:** Browser DevTools showing the NoteAG interface with "Workspace" sidebar and "Top Regulation.pdf" file
+**Current Screenshot:** Browser DevTools showing the smart-research-ai interface with "Workspace" sidebar and "Top Regulation.pdf" file
 
 **Usage:** Used in IMPLEMENTATION_GUIDE.md to show the interface
 
@@ -92,16 +92,16 @@ Please save the following screenshots with these exact filenames:
 1. Save each screenshot/diagram from your browser with the exact filename above
 2. Place them in this `images` directory
 3. The README.md and IMPLEMENTATION_GUIDE.md already reference these paths:
-   - `./images/noteag_workspace_full.png` (README hero image)
-   - `./images/noteag_workspace.png` (Implementation guide)
+   - `./images/smart_research_ai_workspace_full.png` (README hero image)
+   - `./images/smart_research_ai_workspace.png` (Implementation guide)
    - `./images/langchain_pipeline.png`
    - `./images/convex_dashboard.png`
    - `./images/two_pipelines_diagram.png`
 
 ## Current Status
 
-- [ ] noteag_workspace_full.png (needed for README)
-- [ ] noteag_workspace.png (needed for IMPLEMENTATION_GUIDE)
+- [x] smart_research_ai_workspace_full.png (needed for README)
+- [ ] smart_research_ai_workspace.png (needed for IMPLEMENTATION_GUIDE)
 - [ ] langchain_pipeline.png
 - [ ] convex_dashboard.png
 - [ ] two_pipelines_diagram.png

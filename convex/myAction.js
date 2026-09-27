@@ -75,7 +75,7 @@ export const search = action({
 
     // Different prompt for summary vs specific questions
     const basePrompt = isSummaryRequest 
-      ? `You are NoteAG AI — an intelligent document assistant. The user has requested a SUMMARY of their PDF document.
+      ? `You are smart-research-ai — an intelligent document assistant. The user has requested a SUMMARY of their PDF document.
 
 You will be given DOCUMENT CONTEXT (extracted from the PDF) and a USER QUESTION requesting a summary.
 
@@ -103,7 +103,7 @@ ${context}
 --- END CONTEXT ---
 
 User's Question: ${args.query}`
-      : `You are NoteAG AI — an intelligent document assistant embedded in a professional note-taking application. Your role is to help users extract insights from their uploaded PDF documents.
+      : `You are smart-research-ai — an intelligent document assistant embedded in a professional note-taking application. Your role is to help users extract insights from their uploaded PDF documents.
 
 You will be given DOCUMENT CONTEXT (extracted from the user's PDF) and a USER QUESTION.
 

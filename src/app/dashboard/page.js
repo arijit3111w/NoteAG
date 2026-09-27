@@ -277,7 +277,7 @@ export default function DashboardPage() {
 
             {/* Tab-style title */}
             <div className="flex items-center gap-2 px-4 py-1 rounded-md" style={{ background: "rgba(255,255,255,0.05)" }}>
-              <span className="text-[11px] text-neutral-400 font-mono">NoteAG</span>
+              <span className="text-[11px] text-neutral-400 font-mono">smart-research-ai</span>
               <span className="text-[11px] text-neutral-600">—</span>
               <span className="text-[11px] text-neutral-500 font-mono">~/dashboard</span>
             </div>
@@ -331,9 +331,9 @@ export default function DashboardPage() {
                         backgroundClip: "text",
                       }}
                     >
-                      NOTE
+                      smart-research
                     </span>
-                    <span className="text-xl font-bold text-white transition-all group-hover:scale-105">AG</span>
+                    <span className="text-xl font-bold text-white transition-all group-hover:scale-105">-ai</span>
                   </Link>
 
                   {/* Mobile close button */}

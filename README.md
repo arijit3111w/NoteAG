@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📚 NoteAG
+# 📚 smart-research-ai
 
 ### AI-Powered PDF Assistant for Smarter Learning
 
@@ -13,17 +13,17 @@
 [![Google Gemini](https://img.shields.io/badge/Google_Gemini-AI-4285F4?style=for-the-badge&logo=google)](https://ai.google.dev/)
 [![LangChain](https://img.shields.io/badge/LangChain-RAG-green?style=for-the-badge)](https://js.langchain.com/)
 
-![NoteAG Workspace](./images/noteag_workspace_full.png)
+![smart-research-ai Workspace](./images/smart_research_ai_workspace_full.png)
 
 </div>
 
 ---
 
-## 🚀 What is NoteAG?
+## 🚀 What is smart-research-ai?
 
-**NoteAG** is an intelligent PDF assistant that helps students, researchers, and professionals extract insights from documents effortlessly. Upload any PDF, ask questions in natural language, and get accurate AI-generated answers with **exact source highlighting** in the PDF.
+**smart-research-ai** is an intelligent PDF assistant that helps students, researchers, and professionals extract insights from documents effortlessly. Upload any PDF, ask questions in natural language, and get accurate AI-generated answers with **exact source highlighting** in the PDF.
 
-No more manual searching through hundreds of pages. NoteAG uses cutting-edge **RAG (Retrieval-Augmented Generation)** technology to understand your documents and provide contextual answers in seconds.
+No more manual searching through hundreds of pages. smart-research-ai uses cutting-edge **RAG (Retrieval-Augmented Generation)** technology to understand your documents and provide contextual answers in seconds.
 
 ### ✨ Key Features
 
@@ -40,12 +40,12 @@ No more manual searching through hundreds of pages. NoteAG uses cutting-edge **R
 
 ## 🎬 How It Works
 
-![NoteAG Workspace Interface](./images/noteag_workspace_full.png)
+![smart-research-ai Workspace Interface](./images/smart_research_ai_workspace_full.png)
 *Split-screen interface: PDF viewer on the left, AI-powered editor on the right*
 
-### The Magic Behind NoteAG: RAG Explained
+### The Magic Behind smart-research-ai: RAG Explained
 
-NoteAG uses **RAG (Retrieval-Augmented Generation)**, a powerful AI technique that combines search with language understanding:
+smart-research-ai uses **RAG (Retrieval-Augmented Generation)**, a powerful AI technique that combines search with language understanding:
 
 #### Traditional Search ❌
 ```
@@ -54,7 +54,7 @@ Document text: "...completed internship at Infosys Springboard..."
 Result: NO MATCH (different words: "intern" vs "internship")
 ```
 
-#### NoteAG's RAG Approach ✅
+#### smart-research-ai's RAG Approach ✅
 ```
 Your question: "Where did Arijit intern?"
   ↓
@@ -137,8 +137,8 @@ When you ask a question:
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/noteag.git
-cd noteag
+git clone https://github.com/yourusername/smart-research-ai.git
+cd smart-research-ai
 ```
 
 2. **Install dependencies**
@@ -179,7 +179,7 @@ npx convex env set GOOGLE_API_KEY "AIzaSy..."
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see NoteAG in action! 🎉
+Open [http://localhost:3000](http://localhost:3000) to see smart-research-ai in action! 🎉
 
 ---
 
@@ -262,7 +262,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Project Maintainer** - [@yourusername](https://github.com/yourusername)
 
-**Project Link** - [https://github.com/yourusername/noteag](https://github.com/yourusername/noteag)
+**Project Link** - [https://github.com/yourusername/smart-research-ai](https://github.com/yourusername/smart-research-ai)
 
 ---
 
@@ -270,7 +270,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### ⭐ Star this repo if you find it helpful!
 
-**Made with ❤️ by the NoteAG Team**
+**Made with ❤️ by the smart-research-ai Team**
 
 [🌐 Visit Website](#) • [📖 Read Docs] • [🐛 Report Bug](#)
 

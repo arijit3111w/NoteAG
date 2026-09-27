@@ -147,7 +147,7 @@ export default function UpgradePage() {
 
           {/* Tab-style title */}
           <div className="flex items-center gap-2 px-4 py-1 rounded-md" style={{ background: "rgba(255,255,255,0.05)" }}>
-            <span className="text-[11px] text-neutral-400 font-mono">NoteAG</span>
+            <span className="text-[11px] text-neutral-400 font-mono">smart-research-ai</span>
             <span className="text-[11px] text-neutral-600">—</span>
             <span className="text-[11px] text-neutral-500 font-mono">~/dashboard/upgrade</span>
           </div>
@@ -201,9 +201,9 @@ export default function UpgradePage() {
                         backgroundClip: "text",
                       }}
                     >
-                      NOTE
+                      smart-research
                     </span>
-                    <span className="text-xl font-bold text-white transition-all group-hover:scale-105">AG</span>
+                    <span className="text-xl font-bold text-white transition-all group-hover:scale-105">-ai</span>
                   </Link>
 
                   {/* Mobile close button */}
@@ -317,7 +317,7 @@ export default function UpgradePage() {
                         </div>
                         <div className="flex items-center justify-between p-4 rounded-lg" style={{ background: "rgba(255,255,255,0.03)" }}>
                           <span className="text-neutral-400 text-sm">Plan</span>
-                          <span className="text-white font-semibold">{userSubscription?.planName || "NoteAG Pro"}</span>
+                          <span className="text-white font-semibold">{userSubscription?.planName || "smart-research-ai Pro"}</span>
                         </div>
                         {userSubscription?.currentPeriodEnd && (
                           <div className="flex items-center justify-between p-4 rounded-lg" style={{ background: "rgba(255,255,255,0.03)" }}>
@@ -380,7 +380,7 @@ export default function UpgradePage() {
                       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: "#f97316" }}>
                         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                       </svg>
-                      <h2 className="text-2xl font-bold text-white">NoteAG Pro</h2>
+                      <h2 className="text-2xl font-bold text-white">smart-research-ai Pro</h2>
                     </div>
 
                     <div className="mb-6">

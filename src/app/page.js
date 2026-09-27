@@ -329,7 +329,7 @@ export default function Home() {
               className="w-2 h-2 rounded-full"
               style={{ backgroundColor: "#f97316" }}
             />
-            Introducing NoteAG
+            Introducing smart-research-ai
           </div>
 
           {/* Headline */}
@@ -810,12 +810,12 @@ export default function Home() {
                 backgroundClip: "text",
               }}
             >
-              NOTE
+              smart-research
             </span>
-            <span className="text-lg font-bold text-white">AG</span>
+            <span className="text-lg font-bold text-white">-ai</span>
           </div>
           <p className="text-neutral-500 text-sm">
-            © {new Date().getFullYear()} NoteAG. All rights reserved.
+            © {new Date().getFullYear()} smart-research-ai. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a

@@ -119,10 +119,10 @@ export default function Navbar() {
                   backgroundClip: "text",
                 }}
               >
-                NOTE
+                smart-research
               </span>
               <span className="text-xl sm:text-2xl font-bold tracking-tight text-white">
-                AG
+                -ai
               </span>
             </Link>
 

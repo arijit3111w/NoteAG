@@ -63,7 +63,7 @@ function SuccessContent() {
             Payment Successful!
           </h1>
           <p className="text-neutral-400 mb-6">
-            Welcome to NoteAG Pro! You now have unlimited access.
+            Welcome to smart-research-ai Pro! You now have unlimited access.
           </p>
 
           {customerEmail && (

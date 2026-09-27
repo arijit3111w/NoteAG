@@ -18,7 +18,7 @@ export default function SignInPage() {
               backgroundClip: "text",
             }}
           >
-            NoteAG
+            smart-research-ai
           </h1>
           <p className="text-neutral-400 mt-2 text-sm sm:text-base">
             Welcome back — sign in to continue

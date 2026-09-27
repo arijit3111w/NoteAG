@@ -14,7 +14,7 @@ export async function POST(req) {
           price_data: {
             currency: "usd",
             product_data: {
-              name: "NoteAG Pro",
+              name: "smart-research-ai Pro",
               description: "Unlimited PDF uploads and AI assistance",
             },
             unit_amount: 400, // $4.00

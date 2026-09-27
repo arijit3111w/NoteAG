@@ -43,7 +43,7 @@ function downloadAsPDF(editor, filename) {
     </div>
   `;
 
-  const finalName = filename.trim() ? (filename.trim().endsWith('.pdf') ? filename.trim() : `${filename.trim()}.pdf`) : 'NoteAG-Document.pdf';
+  const finalName = filename.trim() ? (filename.trim().endsWith('.pdf') ? filename.trim() : `${filename.trim()}.pdf`) : 'smart-research-ai-Document.pdf';
 
   const opt = {
     margin:       0.5,
@@ -60,7 +60,7 @@ function downloadAsPDF(editor, filename) {
 function DownloadDialog({ isOpen, onClose, onSave }) {
   const overlayRef = useRef(null);
   const dialogRef = useRef(null);
-  const [filename, setFilename] = useState("NoteAG-Document");
+  const [filename, setFilename] = useState("smart-research-ai-Document");
   const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {

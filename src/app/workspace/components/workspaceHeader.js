@@ -220,10 +220,10 @@ export default function WorkspaceHeader({ fileName }) {
               backgroundClip: "text",
             }}
           >
-            NOTE
+            smart-research
           </span>
           <span className="text-lg font-bold tracking-tight text-white transition-all duration-300 group-hover:opacity-80">
-            AG
+            -ai
           </span>
         </Link>
 

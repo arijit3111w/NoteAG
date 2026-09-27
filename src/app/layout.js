@@ -10,7 +10,7 @@ const outfit = Outfit({
 });
 
 export const metadata = {
-  title: "NoteAG",
+  title: "smart-research-ai",
   description: "Your intelligent note-taking companion",
 };
 

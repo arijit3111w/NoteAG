@@ -52,7 +52,7 @@ export async function POST(req) {
             stripeSubscriptionId: subscription.id,
             stripeCustomerId: subscription.customer,
             status: subscription.status,
-            planName: "NoteAG Pro",
+            planName: "smart-research-ai Pro",
             currentPeriodEnd: subscription.current_period_end,
             cancelAtPeriodEnd: subscription.cancel_at_period_end,
           });
@@ -74,7 +74,7 @@ export async function POST(req) {
           stripeSubscriptionId: subscription.id,
           stripeCustomerId: subscription.customer,
           status: subscription.status,
-          planName: "NoteAG Pro",
+          planName: "smart-research-ai Pro",
           currentPeriodEnd: subscription.current_period_end,
           cancelAtPeriodEnd: subscription.cancel_at_period_end,
         });
